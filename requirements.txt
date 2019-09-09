@@ -1,0 +1,5 @@
+flask
+flask-restful
+flask_sqlalchemy
+flask-jsonpify
+flask_swagger_ui

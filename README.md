@@ -13,7 +13,7 @@ First of all, let's clone this repository
 
 `git clone https://gitlab.com/stretchcloud/API-Exercise`
 
-`cd API-Exercise`
+`cd flask-sqlite-api-microservice`
 
 `docker build -t apiapp:latest .`
 
@@ -39,7 +39,7 @@ Use `curl` to test the endpoint
 
 ### 2. Deploy it to Kubernetes
 
-We have already built the Docker Image and pushed it to Docker Registry. Also, we have supplied the APIApp Deployment and Service YML. Create a deployment and a service and you will be good to go.
+We have already built the Docker Image and pushed it to Docker Registry. Also, we have supplied the APIApp Deployment and Service YAML. Create a deployment and a service and you will be good to go.
 
 `kubectl create -f apiapp-deployment.yml`
 
@@ -56,4 +56,4 @@ We have already built the Docker Image and pushed it to Docker Registry. Also, w
 At this point, you can use the same curl option to test the API endpoint.
 
 ### Note
-Due to time constraint, this application has been packaged inside a single docker container and did not use the best practice of App and DB as separate container/POD and then persist the data with statefulset & a PV & PVC.
+This application has been packaged inside a single docker container. That means your App and SQLite DB both runs inside a single container.

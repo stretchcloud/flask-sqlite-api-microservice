@@ -27,10 +27,10 @@ app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
 
 class Passengers(Resource):
     def get(self):
-        conn = db_connect.connect() # connect to database
-        query = conn.execute("select * from titanic") # This line performs query and returns json result
+        conn = db_connect.connect() 
+        query = conn.execute("select * from titanic") 
         result = {'data': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor.fetchall()]}
-        return jsonify(result) # Fetches first column that is Employee ID
+        return jsonify(result)
 
 class Passenger_UUID(Resource):
     def get(self, UUID):
